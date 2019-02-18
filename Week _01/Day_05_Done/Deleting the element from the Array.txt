@@ -1,0 +1,84 @@
+package com.xcorp;
+
+
+public class Main {
+
+
+    // Method for insertion
+    public static int insertedElemets(int[] Array, int n, int capacity, int key) {
+        if (n >= capacity) {
+            return n;
+        }
+        Array[n] = key;
+        return (n + 1);
+    }
+
+    //Finding the element
+    public static int findElement(int Array[], int n, int key) {
+        for (int i = 0; i < n; i++) {
+            if (Array[i] == key) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    //Method for Deleting the Element
+    public static int deletingElement(int Array[], int n, int key) {
+        int pos = findElement(Array, n, key);
+
+        if (pos == -1) {
+            System.out.println(" Elemnt not found");
+            return n;
+        }
+
+        //for Deletimg the element
+        for (int i = pos; i < n - 1; i++) {
+            Array[i] = Array[i + 1];
+        }
+        return n - 1;
+    }
+
+    public static void main(String[] args) {
+
+        int[] Array = new int[10];
+        Array[0] = 10;
+        Array[1] = 20;
+        Array[2] = 30;
+        Array[3] = 40;
+        Array[4] = 50;
+
+        int capacity = 10;
+        int n = 5;
+        int key = 30;
+
+        System.out.print("Array Before Deletion :");
+        for (int i = 0; i < n; i++) {
+            System.out.print(Array[i] + " ");
+        }
+
+        System.out.println();
+        n = deletingElement(Array, n,  key);
+
+        System.out.print("Array After Deletion :");
+        for (int i = 0; i < n; i++) {
+            System.out.print(Array[i] + " ");
+        }
+
+       /* System.out.print("Array Before Insertion :");
+        for(int i=0; i<n; i++){
+            System.out.print(Array[i]+" ");
+        }
+
+        System.out.println();
+        n=insertedElemets(Array,n,capacity,key);
+
+        System.out.print("Array After Insertion :");
+        for(int i=0; i<n; i++){
+            System.out.print(Array[i]+" ");
+        }
+*/
+
+
+    }
+}
