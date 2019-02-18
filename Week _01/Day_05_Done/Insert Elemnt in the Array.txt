@@ -1,0 +1,45 @@
+package com.xcorp;
+
+
+public class Main {
+
+
+    // Method for insertion
+    public static  int insertedElemets(int [] Array, int n, int capacity, int key){
+        if(n>=capacity){
+            return n;
+        }
+        Array[n]=key;
+        return (n+1);
+    }
+
+    public static void main(String[] args) {
+
+        int[] Array = new int[10];
+        Array[0] = 10;
+        Array[1] = 20;
+        Array[2] = 30;
+        Array[3] = 40;
+        Array[4] = 50;
+
+        int capacity=10;
+        int n=5;
+        int key=26;
+
+        System.out.println("Array Before Insertion :");
+        for(int i=0; i<n; i++){
+            System.out.print(Array[i]+" ");
+        }
+
+        System.out.println();
+        n=insertedElemets(Array,n,capacity,key);
+
+        System.out.println("Array After Insertion :");
+        for(int i=0; i<n; i++){
+            System.out.print(Array[i]+" ");
+        }
+
+
+
+    }
+}
